@@ -11,3 +11,9 @@ def fibs(n)
   end  
   fibonacci_array
 end
+
+def fibs_rec(n, fibonacci=[0,1])
+    return fibonacci[0..-3] if n == 0
+    fibonacci.push(fibonacci[-1] + fibonacci[-2])
+    fibs_rec(n - 1, fibonacci)
+end
