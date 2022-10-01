@@ -19,7 +19,14 @@ def fibs_rec(n, fibonacci=[0,1])
 end
 
 def merge_sort(array)
-  if array.size > 1
-    left = array.each_slice((array.size / 2.0).round).to_a[0]
-    right = array.each_slice((array.size / 2.0).round).to_a[1]
-end
+    ## Base case
+    return array if array.length <= 1
+    ## Recursive case
+    p left = array.each_slice((array.size / 2.0).round).to_a[0]
+    p right = array.each_slice((array.size / 2.0).round).to_a[1]
+  
+    left = merge_sort(left)
+    right = merge_sort(right)
+  
+    # return merge(left, right)
+  end
